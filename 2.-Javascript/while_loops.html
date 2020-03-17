@@ -1,0 +1,56 @@
+
+<!doctype html>
+<htmml>
+<head>
+	<title> Learning Javascrip </title>
+
+	<meta charset="utf-8"/>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-widht, initial-scale=1"/>
+
+
+</head>
+
+<body>
+	
+	<p> How many fingers are you holding? </p>
+
+	<input id="myNumber" />
+
+	<button id="guess"> Guess! </button>
+
+	<script type="text/javascript">	
+
+	document.getElementById('guess').onclick=function(){
+
+		var goit=false;
+
+		var guesses=1;
+
+		var x;
+
+		while (goit==false){
+
+			x=Math.random();
+
+			x=6*x;
+
+			x=Math.floor(x);
+
+			if (document.getElementById("myNumber").value==x) {
+
+				goit=true;
+
+			} else {
+
+				guesses++;
+			}
+		}
+
+		alert("Got it! It was a "+x+", It only took me "+guesses+" guesses!");
+	}
+
+	</script>
+
+</body>
+</htmml>

@@ -1,0 +1,190 @@
+
+<!doctype html>
+<htmml>
+<head>
+	<title> Review JS </title>
+
+	<meta charset="utf-8"/>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-widht, initial-scale=1"/>
+
+	<style type="text/css">	
+		#circle {
+			width: 250px;
+			height: 250px;
+			border-radius: 150px;
+			background-color: orange;
+		}
+	</style>
+
+</head>
+
+<body>
+	
+	<!-- Internal JS -->
+	<button onclick="alert('Hi!')"> Click Me! </button>
+
+	<p id="text"> Accesing JS </p>
+
+	<!-- Responding to a Click -->
+	<button id="myButton"> You know you wanna click me...</button>
+
+	<div> <br/></div>
+	<!-- Changin Website text -->
+	<button id="textChanger">Change firstDiv Text!</button>
+
+	<div id="firstDiv">This text is about to Change</div>
+
+	<button id="textAppender">Append some text on the secondDiv </button>
+
+	<div id="secondDiv">Here we are going to append more...</div>
+
+	<button id="textCreator">Create New Text</button>
+
+	<div id="emptyDiv"> </div>
+
+	<div> <br/></div>
+	<!-- Minichalenge Circles -->
+	<div id="circle"></div>
+
+	<!-- Variables & Arrays -->
+	<button id="stylesChanger">Change Text</button>
+	<div id="div1">Some text about to change...</div>
+
+	<!-- If -->
+	<p>What is the weather?</p>
+	<input id="weather" />
+	<button id="weatherButton">Submit</button>
+
+	<!-- JS Game, how many fingers -->
+	<p>How many finger am I holding up?</p>
+	<input id="answerJS" />
+	<button id="myButtonJS">Submit</button>
+
+  	<!-- For Loops -->
+  	<p id="arrayString"> </p>
+
+  	<!-- While -->
+  	<p> How many fingers are you holding up? </p>
+  	<input id="myNumber" />
+  	<button id="guess">Guess!</button>
+
+	<script type="text/javascript">	
+
+		alert("Page Loaded!");
+
+//Accesing elements
+	document.getElementById('text').innerHTML="JS Accesed";
+
+//Responding to a click
+	document.getElementById('myButton').onclick=function(){
+		alert("Told ya!");
+	}
+
+//Changing Website text
+	document.getElementById('textChanger').onclick=function(){
+		document.getElementById('firstDiv').innerHTML="This is a new text";
+	}
+
+	document.getElementById('textAppender').onclick=function(){
+		document.getElementById('secondDiv').innerHTML=document.getElementById('secondDiv').innerHTML + "Text appended...";
+	}
+
+	document.getElementById('textCreator').onclick=function(){
+		document.getElementById('emptyDiv').innerHTML="Text newly created...";
+	}
+	
+//Minichalenge circle
+	document.getElementById('circle').onclick=function() {
+		document.getElementById('circle').style.display="none";
+	}
+
+//variables & Arrays
+	// 1 Creacion de Array
+	var myArray=new Array();
+		myArray[0]="pizza";
+		myArray[1]="Chocolate";
+	// 2 creacion de Array
+	myOtherArray=["rain", "sunshine"];
+	//Agregar elemento al array
+	myOtherArray.push("snow");
+	//Agregar elemento en ubicación especifíca
+	myOtherArray.splice(2, 0, "hail", "cloudy");
+	//mostrar contenido del array
+	console.log(myOtherArray.length);
+
+
+	document.getElementById("stylesChanger").onclick=function() {
+		//newText=document.getElementById("myInput").value;
+		document.getElementById("div1").innerHTML=myArray[0];
+	}
+
+//If
+	document.getElementById("weatherButton").onclick=function(){
+
+		if (document.getElementById("weather").value=="rain") {
+
+			alert("bring your umbrella it's raining");
+		} else {
+			alert("I don't know but is not raining");
+		}
+	}
+
+//JS Game, how many fingers
+	document.getElementById("myButtonJS").onclick=function() {
+
+		var x=Math.random();
+		x=6*x;
+		x=Math.floor(x);
+
+	if (document.getElementById("answerJS").value==x) {
+		alert("Nice");
+	} else {
+		alert("Nope");
+	}
+
+	}
+
+//For Loops
+	var arrayString="";
+	var myArrayLoop=["pizza","Chocolate","crisps"];
+
+	for (var i=0; i<myArrayLoop.length; i++) {
+		arrayString=arrayString+myArrayLoop[i]+" ";
+	}
+
+	document.getElementById("arrayString").innerHTML=arrayString;
+
+//While Loops
+	document.getElementById("guess").onclick=function() {
+
+		var gotit=false;
+		var guesses=1;
+		var x;
+
+		 			
+		while (gotit==false) {
+
+			x=Math.random();
+			x=6*x;
+			x=Math.floor(x); 
+
+			if (document.getElementById("myNumber").value==x) {
+
+				gotit=true;
+
+			} else {
+
+				guesses++;
+
+			}
+		}
+
+			alert("Got it! It was a "+x+". It only took me "+guesses+"guesses!");
+
+		}
+
+	</script>
+
+</body>
+</htmml>

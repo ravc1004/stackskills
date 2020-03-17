@@ -1,0 +1,44 @@
+
+<!doctype html>
+<htmml>
+<head>
+	<title> Learning Javascrip </title>
+
+	<meta charset="utf-8"/>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-widht, initial-scale=1"/>
+
+
+</head>
+
+<body>
+	
+	<h1>Adivina Cuantos dedos estoy mostrando</h1>
+
+	<button id="myButton"> Estas mostrando </button>
+
+	<input type="text" id="answer">
+
+		
+
+	<script type="text/javascript">	
+	
+
+		document.getElementById("myButton").onclick=function(){
+
+
+			var x=Math.random();
+			x=6*x;
+			x=Math.floor(x);
+
+			if (x==document.getElementById("answer").value) {
+				alert("Adivinaste");
+			} else {
+				alert("Intenta de nuevo tenía "+x);
+			}
+
+		}		
+	</script>
+
+</body>
+</html>
